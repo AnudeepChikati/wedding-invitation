@@ -11,7 +11,7 @@ export type ReceptionMap = {
 
 export const weddingData = {
   seo: {
-    title: "Sherin & Praneeth Wedding Invitation",
+    title: "Praneeth & Sherin Wedding Invitation",
     description: "Join us in celebrating our wedding and special day.",
     canonicalUrl: "https://sherin-praneeth-wedding.vercel.app",
     keywords: ["wedding invitation", "Christian wedding", "Sherin", "Praneeth"],
@@ -39,18 +39,14 @@ export const weddingData = {
   },
   families: [
     {
-      title: "Bride's Family",
-      details:
-        "D/O Mrs. Susan Monichan & Mr. Monichan Samuel,\nShemerin Villa, Kannel, Kayamkulam, Kerala",
-    },
-    {
       title: "Groom's Family",
       details:
         "S/O Mrs. Stella Jayasi & Mr. Narseejan Kumar Rondla,\n19-1-45 Kolla Farm Area, Musunur, Kavali, Andhra Pradesh",
     },
     {
-      title: "Extended Blessings",
-      details: "Mr. Saju P Mathew, Dr. Merin Saju, Aiden & Aldrin.",
+      title: "Bride's Family",
+      details:
+        "D/O Mrs. Susan Monichan & Mr. Monichan Samuel,\nShemerin Villa, Kannel, Kayamkulam, Kerala",
     },
   ],
   ceremony: {
@@ -95,8 +91,8 @@ export const weddingData = {
     } satisfies ReceptionMap,
   },
   contact: {
-    phone: "+91 9847481646",
-    tel: "+919847481646",
+    phone: "+91 9491401437",
+    tel: "+919491401437",
   },
   assets: {
     music: "/music/wedding-theme.wav",

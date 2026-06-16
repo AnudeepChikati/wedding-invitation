@@ -19,12 +19,7 @@ export function RSVPForm() {
     setFeedback(null);
     setError(null);
 
-    const result = validateRSVP({
-      name,
-      attendance,
-      note,
-      website,
-    });
+      const result = validateRSVP({ name, attendance, note, website });
 
     if (!result.ok) {
       setError(result.error);
@@ -52,10 +47,13 @@ export function RSVPForm() {
   };
 
   return (
-    <form className="mt-8 grid gap-5" onSubmit={onSubmit} noValidate>
-      <label className="grid gap-2">
-        <span className="text-sm uppercase tracking-[0.22em] text-rose-800">Name</span>
+      <form className="mt-6 grid gap-5 w-full max-w-md" onSubmit={onSubmit} noValidate>
+          <div className="grid gap-2">
+              <label htmlFor="rsvp-name" className="detail-item-label text-left">
+                  Your Name
+              </label>
         <input
+                  id="rsvp-name"
           type="text"
           name="name"
           autoComplete="name"
@@ -63,30 +61,27 @@ export function RSVPForm() {
           minLength={2}
           maxLength={80}
           value={name}
-          onChange={(event) => setName(event.target.value)}
-          placeholder="Enter your name"
-          className="rounded-2xl border border-amber-200 bg-white/85 px-5 py-3 text-base text-rose-900"
+                  onChange={(e) => setName(e.target.value)}
+                  placeholder="Enter your full name"
+                  className="lux-input"
         />
-      </label>
+          </div>
 
+          {/* Honeypot */}
       <label className="hidden" aria-hidden>
         Website
-        <input type="text" tabIndex={-1} autoComplete="off" value={website} onChange={(event) => setWebsite(event.target.value)} />
+              <input type="text" tabIndex={-1} autoComplete="off" value={website} onChange={(e) => setWebsite(e.target.value)} />
       </label>
 
-      <fieldset className="grid gap-3">
-        <legend className="text-sm uppercase tracking-[0.22em] text-rose-800">Attendance Confirmation</legend>
-        <div className="grid gap-3 sm:grid-cols-2">
+          <div className="grid gap-2">
+              <p className="detail-item-label text-left">Will you attend?</p>
+              <div className="lux-radio-group">
           {options.map((option) => {
             const checked = attendance === option;
             return (
               <label
                 key={option}
-                className={`cursor-pointer rounded-2xl border px-5 py-4 transition ${
-                  checked
-                    ? "border-amber-400 bg-amber-50 text-rose-900"
-                    : "border-amber-200/80 bg-white/75 text-rose-700"
-                }`}
+                    className={`lux-radio-option ${checked ? "lux-radio-option--selected" : ""}`}
               >
                 <input
                   type="radio"
@@ -97,40 +92,45 @@ export function RSVPForm() {
                   onChange={() => setAttendance(option)}
                   required
                 />
-                <span className="text-base">{option === "Yes" ? "Yes, I will attend" : "No, I cannot attend"}</span>
+                    {option === "Yes" ? "Joyfully Accept" : "Respectfully Decline"}
               </label>
             );
           })}
         </div>
-      </fieldset>
+          </div>
 
-      <label className="grid gap-2">
-        <span className="text-sm uppercase tracking-[0.22em] text-rose-800">Message (optional)</span>
+          <div className="grid gap-2">
+              <label htmlFor="rsvp-note" className="detail-item-label text-left">
+                  Message <span className="font-normal opacity-50">(optional)</span>
+              </label>
         <textarea
+                  id="rsvp-note"
           name="note"
           value={note}
-          onChange={(event) => setNote(event.target.value)}
+                  onChange={(e) => setNote(e.target.value)}
           maxLength={280}
           rows={3}
-          className="rounded-2xl border border-amber-200 bg-white/85 px-5 py-3 text-base text-rose-900"
+                  placeholder="Share a wish or message..."
+                  className="lux-input"
+                  style={{ resize: "vertical", minHeight: "80px" }}
         />
-      </label>
+          </div>
 
       <button
         type="submit"
         disabled={isSubmitting}
-        className="inline-flex items-center justify-center rounded-full border border-amber-400 bg-amber-300/25 px-7 py-3 text-sm uppercase tracking-[0.28em] text-rose-900 disabled:cursor-not-allowed disabled:opacity-70"
+              className="lux-btn lux-btn--gold w-full mt-2 disabled:opacity-50 disabled:cursor-not-allowed"
       >
-        {isSubmitting ? "Submitting..." : "Submit RSVP"}
+              {isSubmitting ? "Sending..." : "Send Response"}
       </button>
 
       {feedback && (
-        <p className="rounded-xl bg-emerald-50 px-4 py-3 text-sm text-emerald-700" role="status" aria-live="polite">
+              <p className="text-center text-sm rounded-lg px-4 py-3" style={{ color: '#5a7a5a', background: 'rgba(90,122,90,0.08)', border: '1px solid rgba(90,122,90,0.2)' }} role="status" aria-live="polite">
           {feedback}
         </p>
       )}
       {error && (
-        <p className="rounded-xl bg-rose-50 px-4 py-3 text-sm text-rose-700" role="alert">
+              <p className="text-center text-sm rounded-lg px-4 py-3" style={{ color: '#9a5555', background: 'rgba(154,85,85,0.08)', border: '1px solid rgba(154,85,85,0.2)' }} role="alert">
           {error}
         </p>
       )}

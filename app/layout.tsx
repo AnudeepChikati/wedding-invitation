@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { DM_Sans, Great_Vibes } from "next/font/google";
 import "./globals.css";
 import { weddingData } from "@/data/wedding";
 
@@ -13,6 +14,20 @@ const displayFont = localFont({
   src: "../public/fonts/display.ttf",
   variable: "--font-display",
   display: "swap",
+});
+
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  variable: "--font-geom",
+  display: "swap",
+  weight: ["300", "400", "500", "600", "700"],
+});
+
+const greatVibes = Great_Vibes({
+  subsets: ["latin"],
+  variable: "--font-names",
+  display: "swap",
+  weight: "400",
 });
 
 export const metadata: Metadata = {
@@ -45,18 +60,13 @@ export const metadata: Metadata = {
     images: ["/images/couple-photo.jpg"],
   },
   icons: {
-    icon: [
-      { url: "/favicon.ico" },
-      { url: "/icons/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-      { url: "/icons/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-    ],
-    apple: [{ url: "/icons/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
   },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${bodyFont.variable} ${displayFont.variable}`}>
+    <html lang="en" className={`${bodyFont.variable} ${displayFont.variable} ${dmSans.variable} ${greatVibes.variable}`}>
       <body>{children}</body>
     </html>
   );
