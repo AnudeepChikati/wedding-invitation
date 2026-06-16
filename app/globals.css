@@ -1,0 +1,144 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body), "Segoe UI", sans-serif;
+  background: linear-gradient(180deg, #fff8ef 0%, #fff1df 100%);
+  color: #5d1f31;
+}
+
+.page-wrap {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 1rem;
+  display: grid;
+  gap: 1.25rem;
+}
+
+.hero-shell,
+.section-shell {
+  border: 1px solid rgba(217, 173, 93, 0.5);
+  border-radius: 1.5rem;
+  background: rgba(255, 255, 255, 0.78);
+  padding: clamp(1rem, 4vw, 2rem);
+}
+
+.hero-shell {
+  text-align: center;
+}
+
+.small-label,
+.label {
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  font-size: 0.72rem;
+  color: #99651f;
+}
+
+.hero-name,
+.heading {
+  font-family: var(--font-display), "Times New Roman", serif;
+  color: #7a2337;
+}
+
+.hero-name {
+  font-size: clamp(2.2rem, 8vw, 4.8rem);
+  line-height: 1;
+  margin: 0;
+}
+
+.heading {
+  margin: 0;
+  font-size: clamp(1.7rem, 4vw, 2.4rem);
+  text-align: center;
+}
+
+.ampersand {
+  margin: 0.2rem 0;
+  font-size: 2rem;
+  color: #d6a54a;
+}
+
+.description {
+  margin: 0.8rem auto 0;
+  line-height: 1.7;
+  color: #6d3142;
+  text-align: center;
+}
+
+.hero-image-wrap {
+  position: relative;
+  margin: 1.5rem auto;
+  width: min(100%, 880px);
+  aspect-ratio: 5 / 3;
+  overflow: hidden;
+  border-radius: 1.25rem;
+  border: 1px solid rgba(217, 173, 93, 0.6);
+}
+
+.scripture {
+  margin: 1rem auto 0;
+  max-width: 760px;
+  line-height: 1.8;
+  color: #6f3e4b;
+}
+
+.scripture span {
+  display: block;
+  margin-top: 0.25rem;
+  color: #a87a29;
+}
+
+.card {
+  border: 1px solid rgba(217, 173, 93, 0.45);
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 1.2rem;
+  padding: 1rem;
+}
+
+.detail {
+  margin-top: 0.75rem;
+  color: #62253a;
+  line-height: 1.65;
+}
+
+.map-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 1px solid rgba(217, 173, 93, 0.75);
+  padding: 0.65rem 1.2rem;
+  font-size: 0.73rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #6d2437;
+  text-decoration: none;
+}
+
+.map-button:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+a:focus-visible {
+  outline: 3px solid #b98639;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
