@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "NEXT_TELEMETRY_DISABLED=1 NEXT_DISABLE_FONT_DOWNLOADS=1 next build",
+    "build": "next build",
     "start": "next start",
-    "lint": "NEXT_TELEMETRY_DISABLED=1 next lint"
+    "lint": "next lint"
   },
   "dependencies": {
     "next": "^15.5.19",
