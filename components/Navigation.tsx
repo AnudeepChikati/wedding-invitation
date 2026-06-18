@@ -10,8 +10,7 @@ type NavItem = {
 
 const navItems: NavItem[] = [
   { label: "The Wedding", href: "#wedding" },
-  { label: "Ceremony", href: "#ceremony" },
-  { label: "Venue", href: "#venue" },
+    { label: "Ceremony", href: "#ceremony" },
   { label: "Reception", href: "#reception" },
   { label: "RSVP", href: "#rsvp" },
 ];

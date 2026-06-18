@@ -23,8 +23,8 @@ export const weddingData = {
     heroImageAlt: "Sherin and Praneeth portrait",
     scripture: {
       quote:
-        "So then, they are no longer two but one flesh. Therefore, what God has joined together, let no man separate.",
-      verse: "Matthew 19:6",
+        "And now these three remain: faith, hope and love. But the greatest of these is love.",
+      verse: "1 Corinthians 13:13",
     },
   },
   invitation: {
@@ -41,12 +41,12 @@ export const weddingData = {
     {
       title: "Groom's Family",
       details:
-        "S/O Mrs. Stella Jayasi & Mr. Narseejan Kumar Rondla,\n19-1-45 Kolla Farm Area, Musunur, Kavali, Andhra Pradesh",
+        "S/O Mr. Narseejan Kumar Rondla & Mrs. Stella Jayasi,\n19-1-45 Kolla Farm Area, Musunur, Kavali, Andhra Pradesh",
     },
     {
       title: "Bride's Family",
       details:
-        "D/O Mrs. Susan Monichan & Mr. Monichan Samuel,\nShemerin Villa, Kannel, Kayamkulam, Kerala",
+        "D/O Mr. Monichan Samuel & Mrs. Susan Monichan,\nShemerin Villa, Kannel, Kayamkulam, Kerala",
     },
   ],
   ceremony: {
@@ -76,9 +76,9 @@ export const weddingData = {
     } satisfies ReceptionMap,
   },
   secondReception: {
-    title: "Second Reception",
+    title: "Grand Reception",
     description:
-      "To celebrate this joyful occasion with our loved ones in Kavali, Andhra Pradesh, a second reception will also be hosted. We would be honoured by your presence.",
+      "To celebrate this joyful occasion with our loved ones in Kavali, Andhra Pradesh, a reception will also be hosted. We would be honoured by your presence.",
     details: [
       { label: "Time", value: "July 4th, 7:00 PM" },
       { label: "Venue", value: "RSR Kalyana Mandapam, Kavali" },

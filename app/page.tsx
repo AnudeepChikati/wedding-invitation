@@ -1,8 +1,8 @@
 import { Navigation } from "@/components/Navigation";
 import { Countdown } from "@/components/Countdown";
 import { RSVPForm } from "@/components/RSVPForm";
-import { ScratchCard } from "@/components/ScratchCard";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
+import { WeddingAssistant } from "@/components/WeddingAssistant";
 import { weddingData } from "@/data/wedding";
 
 function Ornament() {
@@ -87,35 +87,19 @@ export default function Home() {
           </section>
         </RevealOnScroll>
 
-        {/* ═══ DATE REVEAL ═══ */}
-        <RevealOnScroll>
-          <section className="lux-section" style={{ textAlign: "center" }}>
-            <p className="lux-overline">A Little Surprise</p>
-            <h2 className="lux-heading">{weddingData.invitation.dateRevealTitle}</h2>
-            <p className="lux-subtitle">{weddingData.invitation.dateRevealHint}</p>
-            <ScratchCard day={weddingData.invitation.revealDay} date={weddingData.invitation.revealDate} />
-          </section>
-        </RevealOnScroll>
-
-        {/* ═══ CEREMONY ═══ */}
+        {/* ═══ CEREMONY & LUNCH ═══ */}
         <RevealOnScroll>
           <section id="ceremony" className="lux-section">
-            <p className="lux-overline">The Ceremony</p>
+            <p className="lux-overline">The Wedding Day</p>
             <h2 className="lux-heading">{weddingData.ceremony.title}</h2>
             <Ornament />
             <p className="lux-subtitle">{weddingData.ceremony.description}</p>
             <DetailCard details={weddingData.ceremony.details} />
-          </section>
-        </RevealOnScroll>
 
-        {/* ═══ RECEPTION ═══ */}
-        <RevealOnScroll>
-          <section id="venue" className="lux-section">
-            <p className="lux-overline">The Celebration</p>
-            <h2 className="lux-heading">{weddingData.reception.title}</h2>
-            <Ornament />
-            <p className="lux-subtitle">{weddingData.reception.description}</p>
-            <DetailCard details={weddingData.reception.details} />
+            <div style={{ marginTop: "1.5rem" }}>
+              <p className="lux-overline">Followed by Lunch</p>
+              <DetailCard details={weddingData.reception.details} />
+            </div>
 
             <div className="lux-map-frame">
               <iframe
@@ -123,7 +107,7 @@ export default function Home() {
                 className="w-full h-[280px] md:h-[360px]"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Reception venue map"
+                title="Wedding venue map"
               />
             </div>
             <div className="lux-map-actions">
@@ -137,10 +121,10 @@ export default function Home() {
           </section>
         </RevealOnScroll>
 
-        {/* ═══ SECOND RECEPTION ═══ */}
+        {/* ═══ RECEPTION ═══ */}
         <RevealOnScroll>
           <section id="reception" className="lux-section">
-            <p className="lux-overline">Kavali Celebration</p>
+            <p className="lux-overline">The Reception</p>
             <h2 className="lux-heading">{weddingData.secondReception.title}</h2>
             <Ornament />
             <p className="lux-subtitle">{weddingData.secondReception.description}</p>
@@ -210,6 +194,8 @@ export default function Home() {
           Praneeth & Sherin &middot; 29 June 2026
         </footer>
       </main>
+
+      <WeddingAssistant />
     </>
   );
 }
