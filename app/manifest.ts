@@ -8,8 +8,8 @@ export default function manifest(): MetadataRoute.Manifest {
     description: weddingData.seo.description,
     start_url: "/",
     display: "standalone",
-    background_color: "#f4f2ef",
-    theme_color: "#8b7355",
+    background_color: "#f5f3f9",
+    theme_color: "#9b7fc9",
     icons: [],
   };
 }

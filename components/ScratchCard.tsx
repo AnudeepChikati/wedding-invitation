@@ -32,7 +32,7 @@ export function ScratchCard({ day, date }: ScratchCardProps) {
       context.fillRect(0, 0, canvas.width, canvas.height);
 
         // Accent line
-        context.strokeStyle = "rgba(139, 115, 85, 0.4)";
+        context.strokeStyle = "rgba(155, 127, 201, 0.4)";
         context.lineWidth = 1;
         context.strokeRect(20, 20, canvas.width - 40, canvas.height - 40);
 

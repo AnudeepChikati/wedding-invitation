@@ -208,14 +208,14 @@ function QuizResult({
         angle: 60,
         spread: 55,
         origin: { x: 0, y: 0.7 },
-        colors: ["#8b7355", "#a0865e", "#d4af37", "#f4f2ef"],
+          colors: ["#9b7fc9", "#b39dd8", "#d4af37", "#f5f3f9"],
       });
       confetti({
         particleCount: 3,
         angle: 120,
         spread: 55,
         origin: { x: 1, y: 0.7 },
-        colors: ["#8b7355", "#a0865e", "#d4af37", "#f4f2ef"],
+          colors: ["#9b7fc9", "#b39dd8", "#d4af37", "#f5f3f9"],
       });
       if (Date.now() < end) requestAnimationFrame(frame);
     };
